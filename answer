@@ -1,0 +1,126 @@
+function start(){
+    move();
+    ayra();
+    asvla();
+    chamoyra();
+    gadmoyra();
+    turnLeft();
+}
+function ayra(){
+    while(ballsPresent()){
+        takeBall();
+        turnLeft();
+        while(frontIsClear()){
+            move();
+        }
+        turnAround();
+        if(noBallsPresent()){
+            putBall();
+        } else {
+            while(ballsPresent()){
+                if(frontIsClear()){
+                    move();
+                } else {
+                    sxvagza();
+                }
+            }
+            if(frontIsClear()){
+                putBall();
+            }
+        }
+        while(frontIsClear()){
+            move();
+        }
+        turnLeft();
+        if(noBallsPresent()){
+            if(frontIsClear()){
+                move();
+            }
+        }
+    }
+}
+function asvla(){
+    turnAround();
+    while(frontIsClear()){
+        move();
+    }
+    turnRight();
+}
+function chamoyra(){
+    while(frontIsClear()){
+        move();
+        turnRight();
+        while(frontIsClear()){
+            move();
+            if(ballsPresent()){
+                takeBall();
+                turnAround();
+                while(frontIsClear()){
+                    move();
+                }
+                putBall();
+                turnAround();
+            }
+        }
+        comeback();
+    }    
+    turnAround();
+}
+function comeback(){
+    turnAround();
+    while(frontIsClear()){
+        move();
+    }
+    turnRight();
+}
+function gadmoyra(){
+    while(frontIsClear()){
+        if(ballsPresent()){
+            while(ballsPresent()){
+                takeBall();
+                turnLeft();
+                move();
+                turnRight();
+                move();
+                while(frontIsClear()){
+                    turnLeft();
+                    move();
+                    turnRight();
+                    move();
+                }
+                putBall();
+                goup();
+            }
+        } else {
+            move();
+        }
+    }
+}
+function goup(){
+    turnAround();
+    while(frontIsClear()){
+        move();
+    }
+    turnLeft();
+    while(frontIsClear()){
+        move();
+    }
+    turnLeft();
+}
+function sxvagza(){
+    if(frontIsBlocked()){
+        putBall();
+        while(ballsPresent()){
+            takeBall();
+            turnAround();
+            while(frontIsClear()){
+                move();
+            }
+            putBall();
+            turnAround();
+            while(frontIsClear()){
+                move();
+            }
+        }
+    }
+}
